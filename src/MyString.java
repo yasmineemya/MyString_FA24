@@ -28,4 +28,27 @@ public class MyString {
 		}
 		this.curr_len = str.curr_len;
 	}
+	
+	
+	//utilities
+	private void ensureCapacity() {
+		if(str_arr == null) {
+			str_arr = new char[5];
+		}
+		else if(curr_len == str_arr.length){
+			//need more room
+			char [] temp = new char[str_arr.length*2];
+			//copy the chars to new space
+			for(int i = 0; i < curr_len; i++) {
+				temp[i] = str_arr[i];
+			}
+			//update str_arr 
+			str_arr = temp;
+		}
+	}
+	
+	private void addChar(char ch) {
+		ensureCapacity();
+		str_arr[curr_len++] = ch;
+	}
 }

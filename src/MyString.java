@@ -102,7 +102,7 @@ public class MyString implements Comparable {
 	
 	//write your implementations here
 	
-	
+	//+compareTo(str : MyString) : int
 	@Override
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
@@ -112,6 +112,15 @@ public class MyString implements Comparable {
 	//+concat(str : MyString) : MyString
 	
 	//+concat(str : String) : MyString
+	
+	//+indexOf(str : MyString) : int
+	
+	//+lastIndexOf(str : MyString) : int
+	
+	//+substring(start : int) : MyString
+	
+	//+substring(start : int, end : int) : MyString
+
 	
 	
 }

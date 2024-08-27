@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 //CSC330 Assignment 1
 //complete the MyString class
 
-public class MyString {
+public class MyString implements Comparable {
 	//provided code
 	private char [] str_arr;
 	private int curr_len;
@@ -51,4 +53,65 @@ public class MyString {
 		ensureCapacity();
 		str_arr[curr_len++] = ch;
 	}
+	
+	
+	@Override
+	public String toString() {
+		String s = "";
+		for(char c : str_arr) {
+			s+=c;
+		}
+		return s;
+	}
+	
+	//accessors
+	public char get(int index) {
+		if(index < 0 || index >= curr_len) {
+			throw new IndexOutOfBoundsException();
+		}
+		return str_arr[index];
+	}
+	
+	public int length() {
+		return curr_len;
+	}
+	
+	//using String class methods
+	public MyString toUpper() {
+		String str = this.toString();
+		str = str.toUpperCase();
+		MyString result = new MyString(str);
+		return result;
+	}
+	
+	//manipulating the data directly
+	public MyString toLower() {
+		//make a new MyString
+		MyString str = new MyString(this);
+		for(int i = 0; i < str.length(); i++) {
+			if(str.str_arr[i] >= 'A' && str.str_arr[i] <= 'Z') {
+				str.str_arr[i] = Character.toLowerCase(str.str_arr[i]);
+			}
+		}
+		return str;		
+	}
+	
+	
+	
+	//end of provided code.
+	
+	//write your implementations here
+	
+	
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	//+concat(str : MyString) : MyString
+	
+	//+concat(str : String) : MyString
+	
+	
 }
